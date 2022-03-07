@@ -29,7 +29,7 @@ if __name__ == '__main__':
     while input_string != '1' and input_string != '2':
         input_string = input(f"Do you want to send to the data preparer (1) or data cleaner (2)? (1,2)")
     if input_string == '1':
-        table_path = os.path.abspath(input(f"Please provide the absolute path to the table to be anonymized!"))
+        table_path = os.path.abspath(input(f"Please provide the absolute path to the table to be cleaned!"))
         f = open(table_path, 'rb')
         table_file = f.read()
         f.close()
