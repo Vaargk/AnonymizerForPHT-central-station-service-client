@@ -25,11 +25,12 @@ async def send_to_cleaner(ip, port, table_file, key_file):
     await writer.wait_closed()
 
 if __name__ == '__main__':
-    input_string = ''
-    while input_string != '1' and input_string != '2':
-        input_string = input(f"Do you want to send to the data preparer (1) or data cleaner (2)? (1,2)")
+    # input_string = ''
+    # while input_string != '1' and input_string != '2':
+    #     input_string = input(f"Do you want to send to the data preparer (1) or data cleaner (2)? (1,2)")
+    input_string = '2'
     if input_string == '1':
-        table_path = os.path.abspath(input(f"Please provide the absolute path to the table to be cleaned!"))
+        table_path = os.path.abspath(input(f"Please provide the absolute path to the table to be prepared!"))
         f = open(table_path, 'rb')
         table_file = f.read()
         f.close()
@@ -41,7 +42,7 @@ if __name__ == '__main__':
         f = open(key_path, 'rb')
         key_file = f.read()
         f.close()
-        table_path = os.path.abspath(input(f"Please provide the absolute path to the table to be anonymized!"))
+        table_path = os.path.abspath(input(f"Please provide the absolute path to the table to be cleaned!"))
         f = open(table_path, 'rb')
         table_file = f.read()
         f.close()
